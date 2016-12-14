@@ -1,0 +1,44 @@
+#folderManager{
+	margin-top: 100px;
+	width: 440px;
+}
+
+#sectionBtnsContainer{
+	margin-top: 20px;
+}
+
+#viewFoldersList{
+	width: 200px;
+	height: 270px;
+	background-color: #777777;
+	border: 2px solid black;
+	padding: 10px;
+	float: left;
+	color: black;
+}
+
+#addFolderToList{
+	width: 200px;
+	height: 270px;
+	background-color: #777777;
+	border: 2px solid black;
+	padding: 10px;
+	float: right;
+	color: black;
+}
+
+#viewFoldersList:hover{
+	color: white;
+}
+
+#addFolderToList:hover{
+	color: white;
+}
+
+.buttonTxt{
+	margin-left: 15%;
+	margin-top: 110px;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: calibri;
+}

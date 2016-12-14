@@ -1,0 +1,16 @@
+#authContainer{
+	margin-top: 100px;
+	width: 400px;
+}
+
+#idInput{
+	margin-top: 10px;
+}
+
+#pwInput{
+	margin-top: 10px;
+}
+
+#loginBtn{
+	margin-top: 10px;
+}
