@@ -8,16 +8,16 @@ import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import ca.etsmtl.log720.lab3.dao.helper.InfractionDAO;
 import ca.etsmtl.log720.lab3.model.Dossier;
 import ca.etsmtl.log720.lab3.model.Infraction;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class InfractionDAOImpl implements InfractionDAO{
 
-	private static final Logger logger = LoggerFactory.getLogger(InfractionDAOImpl.class);
 	private SessionFactory sf;
 	
 	public void setSessionFactory(SessionFactory sf){
@@ -27,7 +27,7 @@ public class InfractionDAOImpl implements InfractionDAO{
 	public void addInfraction(Infraction infraction) {
 		Session session = this.sf.getCurrentSession();
 		session.persist(infraction);
-		logger.info("Infraction saved successfully, Infraction Details="+infraction);
+		log.info("Infraction saved successfully, Infraction Details="+infraction);
 		
 	}
 
@@ -42,7 +42,7 @@ public class InfractionDAOImpl implements InfractionDAO{
 		List<Infraction> infractions = session.createQuery(criteria).getResultList();
 
 		for(Infraction i : infractions){
-			logger.info("Infraction List:"+i);
+			log.info("Infraction List:"+i);
 		}
 		return infractions;
 	}
@@ -51,7 +51,7 @@ public class InfractionDAOImpl implements InfractionDAO{
 		Session session = this.sf.getCurrentSession();		
 		System.out.println(id);
 		Infraction infraction = (Infraction) session.load(Infraction.class, new Integer(id));
-		logger.info("Infraction loaded successfully, Infraction details="+infraction);
+		log.info("Infraction loaded successfully, Infraction details="+infraction);
 		
 		return infraction;
 	}

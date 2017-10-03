@@ -8,15 +8,15 @@ import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.Metamodel;
 
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import ca.etsmtl.log720.lab3.dao.helper.UserDAO;
 import ca.etsmtl.log720.lab3.model.User;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class UserDAOImpl implements UserDAO {
 	
-	private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);
 	private SessionFactory sf;
 	
 	public void setSessionFactory(SessionFactory sf){
