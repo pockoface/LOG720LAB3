@@ -12,7 +12,7 @@ public class Hibernate {
 			return new Configuration().configure().buildSessionFactory();
 		}
 		catch(Exception e){
-            System.err.println("Fail to instatiate session." + e);
+            System.err.println("Failed to instatiate session." + e);
             throw new ExceptionInInitializerError(e);
 		}
 	}
