@@ -19,6 +19,7 @@ public class HelloWorld {
 		mv.addObject("who", "Mike Jones");
 		mv.addObject("when", "Live");
 		mv.addObject("What", "nothing");
+		mv.addObject("Where" "Gatawa");
 		return mv;
 	}
 }
