@@ -17,6 +17,7 @@ public class HelloWorld {
 		mv.addObject("message", message);
 		mv.addObject("name", name);
 		mv.addObject("who", "Mike Jones");
+		mv.addObject("when", "Live");
 		return mv;
 	}
 }
