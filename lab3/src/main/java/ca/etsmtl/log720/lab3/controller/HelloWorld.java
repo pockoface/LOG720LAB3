@@ -16,6 +16,7 @@ public class HelloWorld {
 		ModelAndView mv = new ModelAndView("helloworld");
 		mv.addObject("message", message);
 		mv.addObject("name", name);
+		mv.addObject("who", "Mike Jones");
 		return mv;
 	}
 }
