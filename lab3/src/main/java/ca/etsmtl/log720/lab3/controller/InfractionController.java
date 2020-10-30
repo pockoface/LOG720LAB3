@@ -23,7 +23,7 @@ public class InfractionController {
 		this.infractionService = is;
 	}
 	
-	@RequestMapping(value = "/infraction/portail", method = RequestMethod.GET)
+	@RequestMapping(value = "/infraction/portail", method = RequestMethod.POST) //Change to GET
 	public String dossierManager(Model model) {
 		return "infractionGestion";
 	}
