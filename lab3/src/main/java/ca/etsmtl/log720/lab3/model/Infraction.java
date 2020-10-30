@@ -41,35 +41,13 @@ public class Infraction implements Serializable {
     private int niveau;
     private List<Dossier> dossiers;
 
-    public Infraction(String description, int niveau) {
-        this.description = description;
-        this.niveau = niveau;
-        this.dossiers = new ArrayList<Dossier>();
-    }
-
-    public Infraction() {
-
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idInfraction", unique = true, nullable = false)
-    public int getIdInfraction() {
-        return idInfraction;
-    }
-
-    @Column(name = "description", unique = false, nullable = false, length = 255)
-    public String getDescription() {
-        return description;
-    }
-
-    @Column(name = "niveau", unique = false, nullable = false)
-    public int getNiveau() {
-        return niveau;
-    }
-
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "infractions")
-    public List<Dossier> getDossiers() {
-        return dossiers;
-    }
+	@Column(name = "niveau", unique = false, nullable = true)
+	public int getNiveau() {
+		return niveau;
+	}
+	
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "infractions")
+	public List<Dossier> getDossiers() {
+		return dossiers;
+	}
 }
