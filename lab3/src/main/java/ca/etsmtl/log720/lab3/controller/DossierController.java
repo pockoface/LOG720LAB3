@@ -4,11 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import ca.etsmtl.log720.lab3.dao.helper.DossierService;
 import ca.etsmtl.log720.lab3.dao.helper.InfractionService;
@@ -35,37 +31,37 @@ public class DossierController {
         this.infractionService = is;
     }
 
-    @RequestMapping(value = "/dossiers", method = RequestMethod.GET)
+    @GetMapping(value = "/dossiers")
     public String listDossiers(Model model) {
         model.addAttribute("dossier", new Dossier());
         model.addAttribute("listDossiers", this.dossierService.listDossiers());
         return "dossiers";
     }
 
-    @RequestMapping("/dossier/{id}")
+    @GetMapping("/dossier/{id}")
     public String showDossier(@PathVariable("id") int id, Model model) {
         model.addAttribute("dossier", this.dossierService.getDossier(id));
         model.addAttribute("listInfraction", this.infractionService.listInfractions());
         return "dossier";
     }
 
-    @RequestMapping(value = "/dossier/portail", method = RequestMethod.GET)
+    @GetMapping(value = "/dossier/portail")
     public String dossierManager(Model model) {
         return "dossierGestion";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @GetMapping(value = "/logout")
     public String logout(Model model) {
         return "logout";
     }
 
-    @RequestMapping(value = "/dossier/form/add", method = RequestMethod.GET)
+    @GetMapping(value = "/dossier/form/add")
     public String addDossier(Model model) {
         model.addAttribute("dossier", new Dossier());
         return "addDossier";
     }
 
-    @RequestMapping(value = "/dossier/add", method = RequestMethod.POST)
+    @PostMapping(value = "/dossier/add")
     public String addDossier(@ModelAttribute("dossier") Dossier dossier) {
         try {
             this.dossierService.addDossier(dossier);
@@ -75,7 +71,7 @@ public class DossierController {
         }
     }
 
-    @RequestMapping(value = "/dossier/infraction/add", method = RequestMethod.POST)
+    @PostMapping(value = "/dossier/infraction/add")
     public String addInfraction(@RequestParam int infraction, @RequestParam int dossier) {
         Dossier d = this.dossierService.getDossier(dossier);
         Infraction i = this.infractionService.getInfraction(infraction);
