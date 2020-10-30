@@ -15,12 +15,12 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table( name = "users",
 uniqueConstraints = {
-		@UniqueConstraint(columnNames = "user_name")
+		@UniqueConstraint(columnNames = "user_type")
 		}
 )
 public class Type implements Serializable{
 	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+		this.user_type = user_type;
 	}
 
 	public void setPassword(String password) {
