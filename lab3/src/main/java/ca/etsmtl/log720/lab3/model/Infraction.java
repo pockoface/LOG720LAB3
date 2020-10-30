@@ -15,53 +15,31 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table( name = "infraction",
-uniqueConstraints = {@UniqueConstraint(columnNames = "idInfraction") }
+@Table(name = "infraction",
+        uniqueConstraints = {@UniqueConstraint(columnNames = "idInfraction")}
 )
-public class Infraction implements Serializable{
-	
-	public void setIdInfraction(int idInfraction) {
-		this.idInfraction = idInfraction;
-	}
+public class Infraction implements Serializable {
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setIdInfraction(int idInfraction) {
+        this.idInfraction = idInfraction;
+    }
 
-	public void setNiveau(int niveau) {
-		this.niveau = niveau;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setDossiers(List<Dossier> dossiers) {
-		this.dossiers = dossiers;
-	}
+    public void setNiveau(int niveau) {
+        this.niveau = niveau;
+    }
 
-	private int idInfraction;
-	private String description;
-	private int niveau;
-	private List<Dossier> dossiers;
-	
-	public Infraction(String description, int niveau) {
-		this.description = description;
-		this.niveau = niveau;
-		this.dossiers = new ArrayList<Dossier>();
-	}
-	
-	public Infraction(){
-		
-	}
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idInfraction", unique = true, nullable = false)
-	public int getIdInfraction() {
-		return idInfraction;
-	}
+    public void setDossiers(List<Dossier> dossiers) {
+        this.dossiers = dossiers;
+    }
 
-	@Column(name = "description", unique = false, nullable = false, length = 255)
-	public String getDescription() {
-		return description;
-	}
+    private int idInfraction;
+    private String description;
+    private int niveau;
+    private List<Dossier> dossiers;
 
 	@Column(name = "niveau", unique = false, nullable = true)
 	public int getNiveau() {
