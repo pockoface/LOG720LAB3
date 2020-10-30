@@ -63,7 +63,7 @@ public class Infraction implements Serializable{
 		return description;
 	}
 
-	@Column(name = "niveau", unique = false, nullable = false)
+	@Column(name = "niveau", unique = false, nullable = true)
 	public int getNiveau() {
 		return niveau;
 	}
