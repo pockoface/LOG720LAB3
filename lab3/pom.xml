@@ -8,7 +8,7 @@
   <name>lab3 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   	<properties>
-		<spring.version>5.2.0.RELEASE</spring.version>
+		<spring.version>6.0.0</spring.version>
 		<springsecurity.version>4.2.0.RELEASE</springsecurity.version>
 	</properties>
 	
